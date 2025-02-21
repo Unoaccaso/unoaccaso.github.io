@@ -7,17 +7,40 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="index">
+    <!-- Titolo della pagina -->
+    <header>
+        <h1>Diario di Dorian</h1>
+    </header>
+
+    <!-- Pulsante per aprire/chiudere l'indice -->
+    <button class="toggle-index" onclick="toggleIndex()">☰</button>
+
+    <!-- Indice a scomparsa -->
+    <div class="index-overlay" id="index-overlay">
         <h2>Indice</h2>
         <div id="toc"></div> <!-- Indice generato dinamicamente -->
     </div>
+
+    <!-- Contenitore principale -->
     <div class="book-container">
-        <button onclick="prevPage()">&#9665; Precedente</button>
+        <!-- Libro (contenuto principale) -->
         <div class="book" id="book">
             <!-- Le pagine verranno caricate dinamicamente qui -->
         </div>
-        <button onclick="nextPage()">Successivo &#9655;</button>
     </div>
+
+    <!-- Pulsanti di navigazione laterali -->
+    <div class="controls">
+        <button onclick="prevPage()">&#9665;</button>
+        <button onclick="nextPage()">&#9655;</button>
+    </div>
+
+    <!-- Controlli per mobile -->
+    <div class="mobile-controls">
+        <button onclick="prevPage()">&#9665;</button>
+        <button onclick="nextPage()">&#9655;</button>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="script.js"></script>
 </body>

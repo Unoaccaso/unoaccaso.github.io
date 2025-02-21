@@ -1,13 +1,14 @@
 let currentPage = 0;
 let pages = [];
 const book = document.getElementById('book');
+const indexOverlay = document.getElementById('index-overlay');
 const toc = document.getElementById('toc');
 
 // Lista dei file Markdown (capitoli)
 const chapters = [
-    './chapters/capitolo1.md',
-    './chapters/capitolo2.md',
-    './chapters/capitolo3.md'
+    'chapters/capitolo1.md',
+    'chapters/capitolo2.md',
+    'chapters/capitolo3.md'
 ];
 
 // Funzione per caricare un file Markdown
@@ -25,6 +26,12 @@ function createPage(content) {
     return page;
 }
 
+// Funzione per estrarre il titolo dal contenuto Markdown
+function extractTitle(content) {
+    const match = content.match(/^#\s+(.+)/m); // Trova il primo titolo (h1)
+    return match ? match[1] : 'Capitolo senza titolo';
+}
+
 // Funzione per caricare tutti i capitoli e inizializzare il libro
 async function initBook() {
     for (let i = 0; i < chapters.length; i++) {
@@ -36,12 +43,17 @@ async function initBook() {
         // Aggiungi un link all'indice
         const link = document.createElement('a');
         link.href = '#';
-        link.textContent = `Capitolo ${i + 1}`;
+        link.textContent = extractTitle(content); // Usa il titolo del capitolo
         link.onclick = () => goToPage(i);
         toc.appendChild(link);
         if (i < chapters.length - 1) toc.appendChild(document.createTextNode(' | '));
     }
     showPage(0); // Mostra la prima pagina
+}
+
+// Funzione per mostrare/nascondere l'indice
+function toggleIndex() {
+    indexOverlay.classList.toggle('open');
 }
 
 // Funzione per mostrare una pagina specifica
@@ -69,6 +81,7 @@ function prevPage() {
 // Funzione per andare a una pagina specifica
 function goToPage(index) {
     showPage(index);
+    toggleIndex(); // Chiudi l'indice dopo aver selezionato una pagina
 }
 
 // Inizializza il libro al caricamento della pagina
