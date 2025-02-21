@@ -5,9 +5,9 @@ const toc = document.getElementById('toc');
 
 // Lista dei file Markdown (capitoli)
 const chapters = [
-    'chapters/capitolo1.md',
-    'chapters/capitolo2.md',
-    'chapters/capitolo3.md'
+    './chapters/capitolo1.md',
+    './chapters/capitolo2.md',
+    './chapters/capitolo3.md'
 ];
 
 // Funzione per caricare un file Markdown
