@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diario di Dorian</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="index">
+        <h2>Indice</h2>
+        <a href="#" onclick="goToPage(0)">La Nascita del Patto</a> |
+        <a href="#" onclick="goToPage(1)">Diario di Dorian</a>
+    </div>
+    <div class="book-container">
+        <button onclick="prevPage()">&#9665; Precedente</button>
+        <div class="book">
+            <div class="page active">
+                <div class="content">
+                    <h1>Diario di Dorian</h1>
+                    <h2>La Nascita del Patto</h2>
+                    <p>Certe storie iniziano con un’epica battaglia, altre con un destino scritto nelle stelle. Ma quella di Dorian inizia con un’ombra...</p>
+                </div>
+            </div>
+            <div class="page">
+                <div class="content">
+                    <h2>Diario di Dorian</h2>
+                    <p class="date">Data sconosciuta</p>
+                    <p>Non so perché ho deciso di scrivere questo diario. Forse perché sento che mi manca qualcosa...</p>
+                </div>
+            </div>
+        </div>
+        <button onclick="nextPage()">Successivo &#9655;</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
