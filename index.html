@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diario di Dorian</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Aggiungi Marked.js tramite CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <div class="index">
@@ -15,23 +17,11 @@
     <div class="book-container">
         <button onclick="prevPage()">&#9665; Precedente</button>
         <div class="book">
-            <div class="page active">
-                <div class="content">
-                    <h1>Diario di Dorian</h1>
-                    <h2>La Nascita del Patto</h2>
-                    <p>Certe storie iniziano con un’epica battaglia, altre con un destino scritto nelle stelle. Ma quella di Dorian inizia con un’ombra...</p>
-                </div>
-            </div>
-            <div class="page">
-                <div class="content">
-                    <h2>Diario di Dorian</h2>
-                    <p class="date">Data sconosciuta</p>
-                    <p>Non so perché ho deciso di scrivere questo diario. Forse perché sento che mi manca qualcosa...</p>
-                </div>
-            </div>
+            <!-- Le pagine saranno aggiunte dinamicamente tramite JS -->
         </div>
         <button onclick="nextPage()">Successivo &#9655;</button>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
