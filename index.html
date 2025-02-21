@@ -5,23 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diario di Dorian</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Aggiungi Marked.js tramite CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <div class="index">
         <h2>Indice</h2>
-        <a href="#" onclick="goToPage(0)">La Nascita del Patto</a> |
-        <a href="#" onclick="goToPage(1)">Diario di Dorian</a>
+        <div id="toc"></div> <!-- Indice generato dinamicamente -->
     </div>
     <div class="book-container">
         <button onclick="prevPage()">&#9665; Precedente</button>
-        <div class="book">
-            <!-- Le pagine saranno aggiunte dinamicamente tramite JS -->
+        <div class="book" id="book">
+            <!-- Le pagine verranno caricate dinamicamente qui -->
         </div>
         <button onclick="nextPage()">Successivo &#9655;</button>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

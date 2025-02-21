@@ -15,12 +15,10 @@ body {
 .book-container {
     display: flex;
     align-items: center;
-    flex-direction: column;
 }
 
 .book {
-    width: 90%;
-    max-width: 800px;
+    width: 800px;
     height: 500px;
     display: flex;
     position: relative;
@@ -83,39 +81,4 @@ button:hover {
     color: #e4d5b7;
     text-decoration: none;
     margin: 0 10px;
-}
-
-/* Media Query per dispositivi piccoli */
-@media (max-width: 768px) {
-    .book {
-        width: 100%;
-        height: auto;
-    }
-
-    h1, h2 {
-        font-size: 1.5em;
-    }
-    
-    .index a {
-        font-size: 14px;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    h1, h2 {
-        font-size: 1.2em;
-    }
-
-    .content {
-        font-size: 14px;
-    }
-
-    .book {
-        padding: 10px;
-    }
 }
