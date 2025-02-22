@@ -57,6 +57,8 @@ header h1 {
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
+    word-wrap: break-word; /* Forza il testo a andare a capo */
+    white-space: normal; /* Impedisce al testo di uscire dai limiti */
 }
 
 .page.active {
@@ -118,6 +120,11 @@ header h1 {
     transform: translateY(-50%);
     opacity: 0;
     transition: opacity 0.3s;
+    z-index: 1000; /* Assicura che i pulsanti siano sopra tutto */
+}
+
+.book-container:hover .controls {
+    opacity: 1; /* Mostra i pulsanti al passaggio del mouse */
 }
 
 .controls button {
